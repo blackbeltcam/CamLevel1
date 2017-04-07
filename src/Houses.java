@@ -10,18 +10,18 @@ public class Houses {
 		Tortoise.setX(10);
 		Tortoise.setY(433);
 		Tortoise.setPenWidth(4.5);
-		for (int blah=1; blah<=9;blah++){
-			int y=new Random().nextInt(2);
-		if (y==0){
-		DrawHousePointy();
-		}
-		else if(y==1){
-			DrawHouseFlat();
-		}
+		for (int blah = 1; blah <= 9; blah++) {
+			int y = new Random().nextInt(2);
+			if (y == 0) {
+				DrawHousePointy();
+			} else if (y == 1) {
+				DrawHouseFlat();
+			}
 		}
 	}
+
 	private static void DrawHouseFlat() {
-		int r=new Random().nextInt(230)+50;
+		int r = new Random().nextInt(230) + 50;
 		Tortoise.setPenColor(PenColors.getRandomColor());
 		Tortoise.move(r);
 		Tortoise.turn(90);
@@ -33,8 +33,9 @@ public class Houses {
 		Tortoise.move(30);
 		Tortoise.turn(-90);
 	}
-	private static void DrawHousePointy(){ 
-		int w=new Random().nextInt(230)+50;
+
+	private static void DrawHousePointy() {
+		int w = new Random().nextInt(230) + 50;
 		Tortoise.setPenColor(PenColors.getRandomColor());
 		Tortoise.move(w);
 		Tortoise.turn(45);
@@ -48,8 +49,5 @@ public class Houses {
 		Tortoise.move(30);
 		Tortoise.turn(-90);
 	}
-	
-	
-	
-	
+
 }
