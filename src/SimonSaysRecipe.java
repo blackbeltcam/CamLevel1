@@ -11,6 +11,7 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 public class SimonSaysRecipe extends KeyAdapter {
 
@@ -21,6 +22,8 @@ public class SimonSaysRecipe extends KeyAdapter {
 	private int imageIndex;
 	private int tries = 0;
 	private int simonSays = 0;
+	int Random;
+	int points = 0;
 	Date timeAtStart;
 
 	private void makeAlbum() {
@@ -38,19 +41,34 @@ public class SimonSaysRecipe extends KeyAdapter {
 	public void keyPressed(KeyEvent e) {
 		int keyCode = e.getKeyCode();
 		// 16. make a points variable to track the score. tell the user their score at the end.
+
 		// 17. if the keyCode matches the imageIndex and "Simon says..." increase their score
+		if (keyCode == imageIndex && Random == 0) {
+			points++;
+			speak("Good job you did it");
+		}
 		// 18. if the keyCode doesn't match the imageIndex and "Simon didn't say..." increase their score
+		else if (keyCode != imageIndex && Random == 1) {
+			points++;
+			speak("Good job you did it");
+		} else {
+			speak("You, failed");
+		}
+
 		// 19. Use the speak method to tell the user if they were correct or not
+
 		// 13. increment tries by 1
-
+		tries++;
 		// 14. if tries is greater than 9 (or however many you want)
-
-		// 15. exit the program
-
+		if (tries >= 6) {
+			JOptionPane.showMessageDialog(null, "Your score is " + points);
+			// 15. exit the program
+			System.exit(0);
+		}
 		// 11. dispose of the frame
-
+		bobosis.dispose();
 		// 12. call the method to show an image
-
+		showImage();
 	}
 
 	private void showImage() {
@@ -66,6 +84,12 @@ public class SimonSaysRecipe extends KeyAdapter {
 		bobosis.addKeyListener(this);
 		// 10. Use the speak method to either say "Simon says press this key" or "Press this key"
 		// Hint: use the simonSays int and a random number
+		Random = new Random().nextInt(2);
+		if (Random == 0) {
+			speak("Simon says press this key");
+		} else if (Random == 1) {
+			speak("Press this key");
+		}
 
 	}
 
@@ -89,7 +113,9 @@ public class SimonSaysRecipe extends KeyAdapter {
 	}
 
 	public static void main(String[] args) throws Exception {
+
 		new SimonSaysRecipe().makeAlbum();
+
 	}
 }
 
