@@ -68,8 +68,9 @@ public class Jeopardy implements ActionListener {
 		quizPanel.add(secondButton);
 		// 11. Add action listeners to the buttons (2 lines of code)
 		firstButton.addActionListener(this);
+		secondButton.addActionListener(this);
 		// 12. Fill in the actionPerformed() method below
-
+		
 		frame.pack();
 		quizPanel.setLayout(new GridLayout(buttonCount + 1, 3));
 		frame.add(makeScorePanel(), BorderLayout.NORTH);
@@ -105,27 +106,39 @@ public class Jeopardy implements ActionListener {
 		playJeopardyTheme();
 		JButton buttonPressed = (JButton) arg0.getSource();
 		// If the buttonPressed was the firstButton
-		if buttonPressed==firstButton{
+		if (buttonPressed==firstButton){
 		// Call the askQuestion() method
-			askQuestion();
+			askQuestion("What is the trunk of a car called in Britain?", "boot", 200);
 		}
 		// Fill in the askQuestion() method. When you play the game, the score should change.
 
 		// Or if the buttonPressed was the secondButton
-
+		if (buttonPressed==secondButton){
+			askQuestion("What are shoes called in Britain", "trainers", 400);
+			
+		}
 		// Call the askQuestion() method with a harder question
 
 		// Clear the button text (set the button text to nothing)
-
+		buttonPressed.setText("");
 	}
 
 	private void askQuestion(String question, String correctAnswer, int prizeMoney) {
 		// Remove this temporary message
-		JOptionPane.showMessageDialog(null, "this is where the question will be asked");
+		String uyro=JOptionPane.showInputDialog(null, question);
 		// Use a pop up to ask the user the question
-
+		
 		// If the answer is correct
-
+		if (uyro.equals(correctAnswer)){
+			score+=prizeMoney;
+			updateScore();
+			JOptionPane.showMessageDialog(null, "Correct!");
+		}
+		else{
+			score-=prizeMoney;
+			JOptionPane.showMessageDialog(null, "Sorry, the correct answer is "+correctAnswer);
+			updateScore();
+		}
 		// Increase the score by the prizeMoney
 
 		// Call the updateScore() method
