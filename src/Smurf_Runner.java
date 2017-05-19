@@ -5,5 +5,8 @@ public static void main(String[] args) {
 	System.out.println(Handy.getName());
 	Handy.eat();
 	Smurf Papa = new Smurf("Papa Smurf");
+	System.out.println(Papa.getHatColor()); 
+	Smurf Smurfette = new Smurf("Smurfette");
+	System.out.println(Smurfette.isGirlOrBoy()); 
 }
 }
