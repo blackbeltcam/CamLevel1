@@ -7,8 +7,13 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class Chuckle_Clicker implements ActionListener {
+	JButton button1= new JButton("Joke");
+	JButton button2= new JButton("Punchline");
+	
+	
 public static void main(String[] args) {
 	new Chuckle_Clicker().makeButtons();
+	
 	
 	
 }
@@ -21,8 +26,7 @@ public void makeButtons(){
 	JPanel panel= new JPanel();
 	frame.add(panel);
 	
-	JButton button1= new JButton("Joke");
-	JButton button2= new JButton("Punchline");
+	
 	panel.add(button1);
 	panel.add(button2);
 	frame.pack();
@@ -37,7 +41,12 @@ public void makeButtons(){
 @Override
 public void actionPerformed(ActionEvent e) {
 	// TODO Auto-generated method stub
-	JOptionPane.showMessageDialog(null, "hi");
+	if(e.getSource() == button1){
+		JOptionPane.showMessageDialog(null, "The four most beautiful words in our common language: I told you so.");
+	}
+	else{
+		JOptionPane.showMessageDialog(null, "I want to die peacefully in my sleep, like my grandfather.. Not screaming and yelling like the passengers in his car.");
+	}
 }
 }
 /*

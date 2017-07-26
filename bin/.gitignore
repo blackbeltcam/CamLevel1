@@ -3,6 +3,7 @@
 /Cat.class
 /Chuckle_Clicker.class
 /CowTimer.class
+/Cup.class
 /Down Arrow.jpg
 /DuckRunner.class
 /Duck_Test.class
@@ -15,8 +16,11 @@
 /IceCreamVotes.class
 /IceCreamVotes_Runner.class
 /Jeopardy.class
+/Kettle$Water.class
+/Kettle.class
 /LandOfTurtles.class
 /Left Arrow.jpg
+/Microwave.class
 /Movie.class
 /NetflixQueue.class
 /NetflixRunner.class
@@ -26,6 +30,7 @@
 /Person.class
 /Person_Runner.class
 /Platypus.class
+/Popcorn.class
 /Right Arrow.jpeg
 /Robot.class
 /RobotArmy.class
@@ -36,15 +41,11 @@
 /Smurf.class
 /Smurf_Runner.class
 /Supply.class
+/TeaBag.class
+/TeaMaker.class
 /Textbook.class
 /Up arrow.jpeg
 /ill1.jpg
 /ill2.jpg
-/MakeTea.class
-/TeaBag.class
-/Popcorn.class
-/Cup.class
-/Kettle$Water.class
-/Kettle.class
-/Microwave.class
-/TeaMaker.class
+/Lottery_Numbers.class
+/CutenessTV.class
