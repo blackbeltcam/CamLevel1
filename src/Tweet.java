@@ -1,10 +1,14 @@
+import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextField;
+import javax.swing.JTextPane;
 
 import twitter4j.Query;
 import twitter4j.QueryResult;
@@ -13,9 +17,9 @@ import twitter4j.TwitterFactory;
 import twitter4j.auth.AccessToken;
 
 public class Tweet implements ActionListener {
+	JTextPane tweet230 = new JTextPane();
 	JTextField field = new JTextField(15);
 	JButton button = new JButton("search Tweet");
-	JTextField label = new JTextField(15);
 
 	public static void main(String[] args) {
 		new Tweet().makeFrame();
@@ -28,24 +32,32 @@ public class Tweet implements ActionListener {
 		frame.setTitle("Tweeting");
 
 		JPanel panel = new JPanel();
-		frame.add(panel);
+		frame.add(panel, BorderLayout.CENTER);
+		JPanel panel2 = new JPanel();
+		frame.add(panel2, BorderLayout.SOUTH);
 
 		panel.add(field);
 		panel.add(button);
-		panel.add(label);
 
 		button.addActionListener(this);
 
+		tweet230.setEditable(false);
+
+		tweet230.setPreferredSize(new Dimension(500, 500));
+		JScrollPane scroll = new JScrollPane(tweet230);
+		panel2.add(scroll);
+		frame.pack();
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		String tweet = getLatestTweet(field.getText());
-		label.setText(tweet);
+		tweet230.setText(tweet);
 	}
 
 	private String getLatestTweet(String searchingFor) {
+		String s = "";
 
 		Twitter twitter = new TwitterFactory().getInstance();
 		AccessToken accessToken = new AccessToken("2453751158-IVD2VGZsvwZiRKxNe3Gs2lMjg30nvSkV1xSuPFf",
@@ -56,11 +68,18 @@ public class Tweet implements ActionListener {
 		Query query = new Query(searchingFor);
 		try {
 			QueryResult result = twitter.search(query);
-			return result.getTweets().get(0).getText();
+			for (int ufo = 0; ufo <= 13; ufo++) {
+
+				s += result.getTweets().get(ufo).getText() + "\n \n";
+			}
+			return s;
+
 		} catch (Exception e) {
-			System.err.print(e.getMessage());
-			return "What the heck is that?";
+			// System.err.print(e.getMessage());
+			// return "What the heck is that?";
+
 		}
+		return s;
 	}
 
 }
