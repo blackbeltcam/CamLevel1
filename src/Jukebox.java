@@ -20,7 +20,10 @@ import javazoom.jl.player.advanced.AdvancedPlayer;
  * 2. Right click your project and add it as an External JAR (Under Java Build Path > Libraries).*/
 
 public class Jukebox implements Runnable, ActionListener {
-	JButton sheep = new JButton("Sheep");
+	JButton sheep = new JButton("Goodnight");
+	JButton gulho = new JButton("Guitar and Druns");
+	Song ufo = new Song("Goodnight.mp3");
+	Song hy = new Song("Guitar and Druns.mp3");
 
 	public static void main(String[] args) {
 		SwingUtilities.invokeLater(new Jukebox());
@@ -40,6 +43,8 @@ public class Jukebox implements Runnable, ActionListener {
 		 * cover is clicked, stop the currently playing song, and play the one
 		 * that was selected.
 		 */
+		sheep.add(loadImage("Just Cause Film.jpg"));
+		gulho.add(loadImage("Red Puanda.jpg"));
 
 		JFrame frame = new JFrame();
 		frame.setVisible(true);
@@ -47,10 +52,12 @@ public class Jukebox implements Runnable, ActionListener {
 		frame.setSize(300, 300);
 
 		JPanel panel = new JPanel();
-		frame.add(frame);
+		frame.add(panel);
 
-		frame.add(sheep);
+		panel.add(sheep);
+		panel.add(gulho);
 		sheep.addActionListener(this);
+		gulho.addActionListener(this);
 
 	}
 
@@ -65,6 +72,11 @@ public class Jukebox implements Runnable, ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 
+		if (e.getSource() == sheep) {
+			ufo.play();
+		} else if (e.getSource() == gulho) {
+			hy.play();
+		}
 	}
 
 }
