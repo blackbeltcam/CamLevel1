@@ -1,6 +1,8 @@
+/AnimalJumping.class
 /Backpack.class
 /Binary_Converter.class
 /BookOfIllusions.class
+/CandyMan.class
 /Cat.class
 /Chuckle_Clicker.class
 /CowTimer.class
@@ -45,11 +47,13 @@
 /Ruler.class
 /SeaCreature.class
 /SeaCreature_Runner.class
+/SensitiveKeyboard.class
 /SimonSaysRecipe.class
 /Smurf.class
 /Smurf_Runner.class
 /Song$1.class
 /Song.class
+/Spamalot.class
 /Supply.class
 /TeaBag.class
 /TeaMaker.class
@@ -61,9 +65,4 @@
 /ill2.jpg
 /javazoom.jar
 /twitter4j-core-3.0.5.jar
-/Sensitive_Keyboard.class
-/SensitiveKeyboard.class
-/Animal_Cant_Jump.class
-/AnimalJumping.class
-/Spamalot.class
-/CandyMan.class
+/TypeOrDIE.class

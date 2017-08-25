@@ -47,6 +47,7 @@ public class Jukebox implements Runnable, ActionListener {
 		gulho.add(loadImage("Red Puanda.jpg"));
 
 		JFrame frame = new JFrame();
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
 		frame.setTitle("JukeBox");
 		frame.setSize(300, 300);
@@ -71,7 +72,9 @@ public class Jukebox implements Runnable, ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-
+		ufo.stop();
+		hy.stop();
+		
 		if (e.getSource() == sheep) {
 			ufo.play();
 		} else if (e.getSource() == gulho) {
