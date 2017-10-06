@@ -30,7 +30,7 @@ public static void main(String[] args) {
 	public Calculator() {
 	setVisible(true);
 	setSize(500, 500);
-	
+	setDefaultCloseOperation(EXIT_ON_CLOSE);
 	
 	
 	JPanel p1 = new JPanel();
@@ -65,17 +65,35 @@ public static void main(String[] args) {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
+		double answer=0;
 		int n1=Integer.parseInt(tf1.getText());
 		int n2=Integer.parseInt(tf2.getText());
 		if (e.getSource()==b1) {
-			int answer = n1+n2;
-			l1.setText(String.valueOf(answer));
+			double ans=add(n1, n2);
+			
 		}
+		else if (e.getSource()==b2){
+			double ans=add(n1, n2);
+			answer = n1-n2;
+			
+		}
+		else if (e.getSource()==b3){
+			answer = n1*n2;
+			
+		}
+		l1.setText(String.valueOf(answer));
+		
+	}
+	public double add(int n1, int n2){
+		return (double) n1+n2;
 		
 		
 	}
-
-
-
+	public double subtraction(int n1, int n2){
+		return (double) n1-n2;
+	}
+	public double multiplication(int n1, int n2){
+		return (double) 
+	}
 
 }
