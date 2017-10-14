@@ -13,6 +13,7 @@ public class Calculator extends JFrame implements ActionListener {
 	JButton b2=new JButton("-");
 	JButton b3=new JButton("*");
 	JButton b4=new JButton("/");
+	JButton b5=new JButton("%");
 	
 	JTextField tf1 = new JTextField(10);
 	JTextField tf2 = new JTextField(10);
@@ -49,11 +50,13 @@ public static void main(String[] args) {
 	p2.add(b2);
 	p2.add(b3);
 	p2.add(b4);
+	p2.add(b5);
 	
 	b1.addActionListener(this);
 	b2.addActionListener(this);
 	b3.addActionListener(this);
 	b4.addActionListener(this);
+	b5.addActionListener(this);
 	
 	
 	p3.add(l1);
@@ -66,34 +69,45 @@ public static void main(String[] args) {
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		double answer=0;
-		int n1=Integer.parseInt(tf1.getText());
-		int n2=Integer.parseInt(tf2.getText());
+		double n1=Double.parseDouble(tf1.getText());
+		double n2=Double.parseDouble(tf2.getText());
 		if (e.getSource()==b1) {
-			double ans=add(n1, n2);
+			answer=add(n1, n2);
 			
 		}
 		else if (e.getSource()==b2){
 			double ans=add(n1, n2);
-			answer = n1-n2;
+			answer =subtraction (n1, n2);
 			
 		}
 		else if (e.getSource()==b3){
-			answer = n1*n2;
-			
+			answer =multiplication (n1, n2);
+		}
+		else if (e.getSource()==b4){
+			answer=division(n1, n2);
+		}
+		else if (e.getSource()==b5){
+			answer=modulo(n1, n2);
 		}
 		l1.setText(String.valueOf(answer));
 		
 	}
-	public double add(int n1, int n2){
-		return (double) n1+n2;
+	public double add(double n1, double n2){
+		return n1+n2;
 		
 		
 	}
-	public double subtraction(int n1, int n2){
-		return (double) n1-n2;
+	public double subtraction(double n1, double n2){
+		return n1-n2;
 	}
-	public double multiplication(int n1, int n2){
-		return (double) 
+	public double multiplication(double n1, double n2){
+		return n1*n2 ;
+	}
+	public double division(double n1, double n2){
+		return n1/n2;
+	}
+	public double modulo(double n1, double n2){
+		return n1%n2;
 	}
 
 }
