@@ -12,16 +12,6 @@ public class Red_Green implements ActionListener {
 public static void main(String[] args) {
 	new Red_Green();
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }
 
 public Red_Green(){
